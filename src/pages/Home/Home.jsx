@@ -2,101 +2,89 @@ import { NavLink } from 'react-router-dom'
 import styles from './Home.module.css'
 
 const FeaturedLogo = () => (
-  <svg width="480" height="200" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" aria-label="The Plastik logo">
+  <svg width="600" height="195" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" aria-label="The Plastik logo">
     <defs>
+      <clipPath id="cardClip">
+        <rect x="40" y="30" width="220" height="155" rx="18"/>
+      </clipPath>
       <style>{`
         @keyframes drawCard {
-          from { stroke-dashoffset: 520; }
+          from { stroke-dashoffset: 760; }
           to   { stroke-dashoffset: 0; }
         }
         @keyframes drawP {
-          from { stroke-dashoffset: 700; }
+          from { stroke-dashoffset: 800; }
           to   { stroke-dashoffset: 0; }
         }
         @keyframes fadeIn {
           from { opacity: 0; }
           to   { opacity: 1; }
         }
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(10px); }
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(8px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        @keyframes chipPulse {
-          0%, 100% { opacity: 0.5; }
-          50%       { opacity: 1; }
+        @keyframes pulse {
+          0%,100% { opacity:.45; }
+          50%      { opacity:1; }
         }
-        .anim-card {
-          stroke-dasharray: 520;
-          stroke-dashoffset: 520;
-          animation: drawCard 1.2s cubic-bezier(0.4,0,0.2,1) 0.1s forwards;
-        }
-        .anim-p {
-          stroke-dasharray: 700;
-          stroke-dashoffset: 700;
-          animation: drawP 1.4s cubic-bezier(0.4,0,0.2,1) 0.6s forwards;
-        }
-        .anim-chip {
-          opacity: 0;
-          animation: fadeIn 0.4s ease 1.4s forwards, chipPulse 2.4s ease-in-out 1.8s infinite;
-        }
-        .anim-divider {
-          opacity: 0;
-          animation: fadeIn 0.5s ease 1.2s forwards;
-        }
-        .anim-the {
-          opacity: 0;
-          animation: fadeInUp 0.5s ease 1.4s forwards;
-        }
-        .anim-plastik {
-          opacity: 0;
-          animation: fadeInUp 0.5s ease 1.6s forwards;
-        }
-        .anim-line {
-          opacity: 0;
-          animation: fadeIn 0.5s ease 1.8s forwards;
-        }
-        .anim-sub {
-          opacity: 0;
-          animation: fadeInUp 0.5s ease 2.0s forwards;
-        }
+        .dc { stroke-dasharray:760; stroke-dashoffset:760; animation: drawCard 1.3s cubic-bezier(.4,0,.2,1) .1s forwards; }
+        .dp { stroke-dasharray:800; stroke-dashoffset:800; animation: drawP 1.5s cubic-bezier(.4,0,.2,1) .6s forwards; }
+        .chip { opacity:0; animation: fadeIn .4s ease 1.5s forwards, pulse 2.5s ease-in-out 1.9s infinite; }
+        .div  { opacity:0; animation: fadeIn .4s ease 1.3s forwards; }
+        .t1   { opacity:0; animation: fadeUp .45s ease 1.5s forwards; }
+        .t2   { opacity:0; animation: fadeUp .45s ease 1.7s forwards; }
+        .t3   { opacity:0; animation: fadeUp .45s ease 1.9s forwards; }
+        .t4   { opacity:0; animation: fadeUp .45s ease 2.1s forwards; }
       `}</style>
     </defs>
 
-    {/* ── LEFT: square card frame ── */}
-    <rect
-      className="anim-card"
-      x="20" y="20" width="160" height="160" rx="18"
-      fill="none" stroke="#ff9500" strokeWidth="2.5"
-    />
+    {/* Card outline */}
+    <rect className="dc" x="40" y="30" width="220" height="155" rx="18"
+          fill="none" stroke="#ff9500" strokeWidth="2.5"/>
 
-    {/* Chip — top left inside card, away from P */}
-    <g className="anim-chip">
-      <rect x="38" y="38" width="30" height="22" rx="4" fill="none" stroke="#ff9500" strokeWidth="1.5"/>
-      <line x1="53" y1="38" x2="53" y2="60" stroke="#ff9500" strokeWidth="1" opacity="0.6"/>
-      <line x1="38" y1="49" x2="68" y2="49" stroke="#ff9500" strokeWidth="1" opacity="0.6"/>
+    {/* Chip */}
+    <g className="chip">
+      <rect x="62" y="52" width="38" height="28" rx="5"
+            fill="none" stroke="#ff9500" strokeWidth="1.8"/>
+      <line x1="81" y1="52" x2="81" y2="80" stroke="#ff9500" strokeWidth="1.2" opacity=".7"/>
+      <line x1="62" y1="66" x2="100" y2="66" stroke="#ff9500" strokeWidth="1.2" opacity=".7"/>
     </g>
 
-    {/* P — centered in card, does NOT overlap chip */}
-    <text
-      className="anim-p"
-      x="100" y="155"
-      textAnchor="middle"
-      fontFamily="sans-serif"
-      fontSize="120"
-      fontWeight="700"
-      fill="none"
-      stroke="#ff9500"
-      strokeWidth="2.5"
-    >P</text>
+    {/* P clipped inside card */}
+    <g clipPath="url(#cardClip)">
+      <text className="dp"
+            x="178" y="172"
+            textAnchor="middle"
+            fontFamily="Arial Black, sans-serif"
+            fontSize="148"
+            fontWeight="900"
+            fill="none"
+            stroke="#ff9500"
+            strokeWidth="2.5"
+            strokeLinejoin="round">P</text>
+    </g>
 
-    {/* ── Divider ── */}
-    <line className="anim-divider" x1="200" y1="30" x2="200" y2="170" stroke="#2a2a2a" strokeWidth="1"/>
+    {/* Divider */}
+    <line className="div" x1="282" y1="38" x2="282" y2="178" stroke="#2a2a2a" strokeWidth="1"/>
 
-    {/* ── RIGHT: wordmark ── */}
-    <text className="anim-the"     x="222" y="78"  fontFamily="sans-serif" fontSize="13" fontWeight="400" fill="#777" letterSpacing="6">THE</text>
-    <text className="anim-plastik" x="218" y="118" fontFamily="sans-serif" fontSize="38" fontWeight="700" fill="#ff9500" letterSpacing="3">PLASTIK</text>
-    <rect className="anim-line"    x="218" y="128" width="230" height="1.5" rx="1" fill="#ff9500" opacity="0.3"/>
-    <text className="anim-sub"     x="222" y="150" fontFamily="sans-serif" fontSize="12" fontWeight="400" fill="#555" letterSpacing="2">FINTECH PLATFORM</text>
+    {/* THE */}
+    <text className="t1" x="302" y="82"
+          fontFamily="Arial, sans-serif" fontSize="13" fontWeight="400"
+          fill="#666" letterSpacing="6">THE</text>
+
+    {/* PLASTIK */}
+    <text className="t2" x="298" y="126"
+          fontFamily="Arial Black, sans-serif" fontSize="42" fontWeight="900"
+          fill="#ff9500" letterSpacing="2">PLASTIK</text>
+
+    {/* Underline */}
+    <rect className="t3" x="298" y="135" width="220" height="2" rx="1" fill="#ff9500" opacity=".4"/>
+
+    {/* FINTECH PLATFORM */}
+    <text className="t4" x="302" y="158"
+          fontFamily="Arial, sans-serif" fontSize="12" fontWeight="400"
+          fill="#555" letterSpacing="3">FINTECH PLATFORM</text>
   </svg>
 )
 
