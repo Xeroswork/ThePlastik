@@ -1,12 +1,35 @@
 import { NavLink } from 'react-router-dom'
 import styles from './Home.module.css'
 
+const FeaturedLogo = () => (
+  <svg width="320" height="160" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" aria-label="The Plastik logo">
+    {/* Card shape */}
+    <rect x="10" y="20" width="110" height="120" rx="10" fill="none" stroke="#ff9500" strokeWidth="2"/>
+    {/* Chip */}
+    <rect x="28" y="40" width="28" height="20" rx="3" fill="none" stroke="#ff9500" strokeWidth="1.5"/>
+    <line x1="42" y1="40" x2="42" y2="60" stroke="#ff9500" strokeWidth="1" opacity="0.5"/>
+    <line x1="28" y1="50" x2="56" y2="50" stroke="#ff9500" strokeWidth="1" opacity="0.5"/>
+    {/* P letter over card */}
+    <text x="65" y="125" textAnchor="middle" fontFamily="sans-serif" fontSize="100" fontWeight="700" fill="none" stroke="#ff9500" strokeWidth="2">P</text>
+    {/* Vertical divider */}
+    <line x1="138" y1="25" x2="138" y2="135" stroke="#2a2a2a" strokeWidth="1"/>
+    {/* Wordmark */}
+    <text x="155" y="68" fontFamily="sans-serif" fontSize="10" fill="#666" letterSpacing="5">THE</text>
+    <text x="153" y="98" fontFamily="sans-serif" fontSize="28" fontWeight="700" fill="#ff9500" letterSpacing="3">PLASTIK</text>
+    <rect x="153" y="106" width="155" height="1.5" rx="1" fill="#ff9500" opacity="0.25"/>
+    <text x="155" y="124" fontFamily="sans-serif" fontSize="10" fill="#444" letterSpacing="1">FINTECH PLATFORM</text>
+  </svg>
+)
+
 function Home() {
   return (
     <div className={styles.page}>
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+            <FeaturedLogo />
+          </div>
           <div className={styles.badge}>Welcome</div>
           <h1 className={styles.heroTitle}>
             Build something<br />
@@ -24,7 +47,6 @@ function Home() {
         <div className={styles.featuresInner}>
           <p className={styles.sectionLabel}>What we offer</p>
           <h2 className={styles.sectionTitle}>Everything you need</h2>
-
           <div className={styles.cards}>
             {[
               { num: '01', title: 'Fast & Modern', desc: 'Built with React and Vite for blazing performance out of the box.' },
