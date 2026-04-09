@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import styles from './Home.module.css'
 
 const FeaturedLogo = () => (
-  <svg width="600" height="195" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" aria-label="The Plastik logo">
+  <svg width="900" height="293" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" aria-label="The Plastik logo">
     <defs>
       <clipPath id="cardClip">
         <rect x="40" y="30" width="220" height="155" rx="18"/>
@@ -39,11 +39,9 @@ const FeaturedLogo = () => (
       `}</style>
     </defs>
 
-    {/* Card outline */}
     <rect className="dc" x="40" y="30" width="220" height="155" rx="18"
           fill="none" stroke="#ff9500" strokeWidth="2.5"/>
 
-    {/* Chip */}
     <g className="chip">
       <rect x="62" y="52" width="38" height="28" rx="5"
             fill="none" stroke="#ff9500" strokeWidth="1.8"/>
@@ -51,7 +49,6 @@ const FeaturedLogo = () => (
       <line x1="62" y1="66" x2="100" y2="66" stroke="#ff9500" strokeWidth="1.2" opacity=".7"/>
     </g>
 
-    {/* P clipped inside card */}
     <g clipPath="url(#cardClip)">
       <text className="dp"
             x="178" y="172"
@@ -65,23 +62,18 @@ const FeaturedLogo = () => (
             strokeLinejoin="round">P</text>
     </g>
 
-    {/* Divider */}
     <line className="div" x1="282" y1="38" x2="282" y2="178" stroke="#2a2a2a" strokeWidth="1"/>
 
-    {/* THE */}
     <text className="t1" x="302" y="82"
           fontFamily="Arial, sans-serif" fontSize="13" fontWeight="400"
           fill="#666" letterSpacing="6">THE</text>
 
-    {/* PLASTIK */}
     <text className="t2" x="298" y="126"
           fontFamily="Arial Black, sans-serif" fontSize="42" fontWeight="900"
           fill="#ff9500" letterSpacing="2">PLASTIK</text>
 
-    {/* Underline */}
     <rect className="t3" x="298" y="135" width="220" height="2" rx="1" fill="#ff9500" opacity=".4"/>
 
-    {/* FINTECH PLATFORM */}
     <text className="t4" x="302" y="158"
           fontFamily="Arial, sans-serif" fontSize="12" fontWeight="400"
           fill="#555" letterSpacing="3">FINTECH PLATFORM</text>
@@ -91,7 +83,6 @@ const FeaturedLogo = () => (
 function Home() {
   return (
     <div className={styles.page}>
-      {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2.5rem' }}>
@@ -109,7 +100,6 @@ function Home() {
         <div className={styles.heroGrid} aria-hidden="true" />
       </section>
 
-      {/* Features */}
       <section className={styles.features}>
         <div className={styles.featuresInner}>
           <p className={styles.sectionLabel}>What we offer</p>
@@ -130,7 +120,6 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className={styles.cta}>
         <div className={styles.ctaInner}>
           <h2 className={styles.ctaTitle}>Ready to get started?</h2>
