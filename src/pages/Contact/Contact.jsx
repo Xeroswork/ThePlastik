@@ -46,14 +46,10 @@ function Contact() {
               <span className={styles.detailLabel}>Address</span>
               <span className={styles.detailValue}>Athens, Greece</span>
             </div>
-            <div className={styles.detail}>
-  <span className={styles.detailLabel}>Address</span>
-  <span className={styles.detailValue}>Athens, Greece</span>
-            </div>
               <div className={styles.detail}>
               <span className={styles.detailLabel}>Telegram</span>
               <a href="https://t.me/elatomic" target="_blank" rel="noreferrer" className={styles.detailValue}>
-    @theplastik
+    Text to admin @elatomic
   </a>
 </div>
           </div>
