@@ -9,7 +9,6 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  // ⚠️ Подключи сюда свой бэкенд, Formspree, EmailJS и т.д.
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Form submitted:', form)
@@ -21,6 +20,7 @@ function Contact() {
   return (
     <div className={styles.page}>
       <div className={styles.inner}>
+
         <div className={styles.left}>
           <p className={styles.label}>Get in touch</p>
           <h1 className={styles.title}>Contact us</h1>
@@ -28,17 +28,17 @@ function Contact() {
             Have a question or want to work together?
             Drop us a message and we'll get back to you.
           </p>
-
+          <div className={styles.details}>
             <div className={styles.detail}>
               <span className={styles.detailLabel}>Address</span>
               <span className={styles.detailValue}>Athens, Greece</span>
             </div>
-              <div className={styles.detail}>
+            <div className={styles.detail}>
               <span className={styles.detailLabel}>Telegram</span>
               <a href="https://t.me/elatomic" target="_blank" rel="noreferrer" className={styles.detailValue}>
-    Text to admin @elatomic
-  </a>
-</div>
+                Text to admin @elatomic
+              </a>
+            </div>
           </div>
         </div>
 
@@ -92,6 +92,7 @@ function Contact() {
             </form>
           )}
         </div>
+
       </div>
     </div>
   )
