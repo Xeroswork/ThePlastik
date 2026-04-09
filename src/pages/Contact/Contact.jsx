@@ -29,19 +29,6 @@ function Contact() {
             Drop us a message and we'll get back to you.
           </p>
 
-          <div className={styles.details}>
-            <div className={styles.detail}>
-              <span className={styles.detailLabel}>Email</span>
-              <a href="mailto:info@theplastik.com" className={styles.detailValue}>
-                info@theplastik.com
-              </a>
-            </div>
-            <div className={styles.detail}>
-              <span className={styles.detailLabel}>Phone</span>
-              <a href="tel:+10000000000" className={styles.detailValue}>
-                +1 000 000 0000
-              </a>
-            </div>
             <div className={styles.detail}>
               <span className={styles.detailLabel}>Address</span>
               <span className={styles.detailValue}>Athens, Greece</span>
